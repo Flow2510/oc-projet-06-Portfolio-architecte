@@ -15,6 +15,27 @@ async function chargingProject(){           //  fonction pour afficher les proje
     }
 }
 
+async function showFilters() {              //  fonction pour afficher les filtres
+    try{
+        const response = await fetch('http://localhost:5678/api/categories');
+
+        if (!response.ok){                             // on gere les erreurs
+            throw new Error(`Erreur HTTP : ${response.status}`);
+        }
+
+        const categorys = await response.json();
+        for (let category of categorys){
+            const categorysWrapper = document.querySelector('.filters_wrapper');
+            const button = document.createElement('button');
+            button.classList.add('filter');
+            button.innerText = category.name;
+            categorysWrapper.appendChild(button);
+        }   
+    }   catch(error){
+         console.error('Erreur lors de la récupération des données :', error);
+    }
+}
+
 function showProjects(){            //  fonction pour afficher les projets dans la gallerie
     for (let work of allWorks){
         const projectContainer = document.querySelector('.gallery');
@@ -32,6 +53,7 @@ function showProjects(){            //  fonction pour afficher les projets dans 
 (async () => {          
     await chargingProject();        //  on attend que la fonction ai fini de s'executer
     showProjects();
+    showFilters();
 })();
 
 

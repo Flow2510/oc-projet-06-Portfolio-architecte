@@ -241,5 +241,35 @@
         0
       ]
     }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-16T21:52:13.606Z",
+    "data": {
+      "id": "1750110733606",
+      "timestamp": "2025-06-16T21:52:13.606Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    }
   }
 ]
