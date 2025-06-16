@@ -29,7 +29,12 @@ async function showFilters() {              //  fonction pour afficher les filtr
             const button = document.createElement('button');
             button.classList.add('filter');
             button.innerText = category.name;
+            button.dataset.id = category.id;
             categorysWrapper.appendChild(button);
+
+            button.addEventListener('click', () => {
+                console.log(button.dataset)
+            })
         }   
     }   catch(error){
          console.error('Erreur lors de la récupération des données :', error);

@@ -271,5 +271,35 @@
         33
       ]
     }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-16T21:53:23.686Z",
+    "data": {
+      "id": "1750110803686",
+      "timestamp": "2025-06-16T21:53:23.686Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\index.html",
+      "changedLines": [
+        37,
+        38,
+        39
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-16T21:53:23.688Z",
+    "data": {
+      "id": "1750110803688",
+      "timestamp": "2025-06-16T21:53:23.688Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        17,
+        54,
+        55
+      ]
+    }
   }
 ]
