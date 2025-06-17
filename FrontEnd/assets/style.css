@@ -348,6 +348,10 @@ footer nav ul {
 	font-size: 1.2rem;
 }
 
+.modal__gallery-navigation i{
+	cursor: pointer;
+}
+
 .modal__gallery-title{
 	font-size: 1.5rem;
 	margin: 1rem auto 2rem;
@@ -380,6 +384,7 @@ footer nav ul {
 	color: white;
 	font-size: 0.7rem;
 	padding: 0.3rem;
+	cursor: pointer;
 }
 
 .modal__gallery-banner{

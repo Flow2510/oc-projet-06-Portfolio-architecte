@@ -162,9 +162,7 @@ if (token){                 // si on a un token  =>
         window.location.reload();
     })
 
-   
-
-    const editBanner = document.querySelector('.edit');
+    const editBanner = document.querySelector('.edit');         //   affichage du modal
     const portfolioEdit = document.querySelector('.portfolio__edit')
     const modal = document.querySelector('.modal');
     editBanner.style.display = "flex";
@@ -173,6 +171,13 @@ if (token){                 // si on a un token  =>
         modal.style.display = 'flex';
         showModalProject();
     })
+
+    const modalGalleryClose = document.querySelector('.modal__gallery-close');
+    if (modalGalleryClose){
+        modalGalleryClose.addEventListener('click', () => {
+            modal.style.display = "none";
+        })
+    }
 }
 
 if (projectContainer) {
