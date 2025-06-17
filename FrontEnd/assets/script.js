@@ -1,4 +1,5 @@
 let allWorks = [];  // on declare un nouveau tableau pour utilisé la variable works globalement
+const token = localStorage.getItem('authToken');    //    on regarde si on a un token ici
 
 const projectContainer = document.querySelector('.gallery');
 const categorysWrapper = document.querySelector('.filters__wrapper');
@@ -85,15 +86,17 @@ const inputEmail = document.querySelector('.login__input-email');
 const inputPassword = document.querySelector('.login__input-password');
 const emailError = document.querySelector('.login__error-email');
 const passwordError = document.querySelector('.login__error-password');
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 if (buttonLogin) {
     buttonLogin.addEventListener('click', () => {
-        if (inputEmail.value.trim() === "") {           // si l'input est vide on met une erreur
+        const email = inputEmail.value.trim();
+        const password = inputPassword.value.trim();
+        
+        if (email === "") {           // si l'input est vide on met une erreur
             inputEmail.style.border = "1px solid red";
             emailError.classList.add('login__error');
             emailError.innerText = 'Veuillez mettre une adresse email';
-        } else if(inputPassword.value.trim() === "") {
+         } else if(password === "") {
             inputPassword.style.border = "1px solid red";
             passwordError.classList.add('login__error');
             passwordError.innerText = 'Veuillez remplir le mot de passe';
@@ -105,9 +108,33 @@ if (buttonLogin) {
             passwordError.classList.remove('login__error');
             passwordError.innerText = '';
 
-            // faire une fonction pour envoyer et comparer les identifiants
+            login();
         }
     });
+}
+
+async function login() {
+    const email = inputEmail.value.trim();
+    const password = inputPassword.value.trim();
+    const response = await fetch('http://localhost:5678/api/users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email , password })
+    })
+
+    if (!response.ok) {
+            alert("Identifiants invalides.");
+        }
+
+    const data = await response.json();
+    
+    if (data.token) {
+        localStorage.setItem('authToken', data.token);
+        document.querySelector('.header__link-login').innerText = "logout";
+        window.location.href = 'index.html';
+    }
 }
 
 if (projectContainer) {

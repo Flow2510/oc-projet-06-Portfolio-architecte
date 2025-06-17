@@ -1426,5 +1426,314 @@
         98
       ]
     }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:19:55.109Z",
+    "data": {
+      "id": "1750180795109",
+      "timestamp": "2025-06-17T17:19:55.109Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\style.css",
+      "changedLines": [
+        261
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:19:55.117Z",
+    "data": {
+      "id": "1750180795117",
+      "timestamp": "2025-06-17T17:19:55.117Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        105,
+        106,
+        107
+      ]
+    }
+  },
+  {
+    "type": "session",
+    "timestamp": "2025-06-17T17:21:40.934Z",
+    "data": {
+      "id": "1750180900934",
+      "project": "Portfolio-architecte-sophie-bluel-master",
+      "start": "2025-06-17T17:21:40.934Z",
+      "end": "2025-06-17T17:36:18.330Z"
+    }
+  },
+  {
+    "type": "session",
+    "timestamp": "2025-06-17T17:36:18.330Z",
+    "data": {
+      "id": "1750180900934",
+      "project": "Portfolio-architecte-sophie-bluel-master",
+      "start": "2025-06-17T17:21:40.934Z",
+      "end": "2025-06-17T17:36:18.330Z"
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:44:19.514Z",
+    "data": {
+      "id": "1750182259514",
+      "timestamp": "2025-06-17T17:44:19.514Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:44:31.648Z",
+    "data": {
+      "id": "1750182271648",
+      "timestamp": "2025-06-17T17:44:31.648Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        96
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:47:08.556Z",
+    "data": {
+      "id": "1750182428556",
+      "timestamp": "2025-06-17T17:47:08.556Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:47:59.528Z",
+    "data": {
+      "id": "1750182479528",
+      "timestamp": "2025-06-17T17:47:59.528Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        106,
+        107,
+        108
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:49:06.652Z",
+    "data": {
+      "id": "1750182546652",
+      "timestamp": "2025-06-17T17:49:06.652Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        91,
+        92
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:50:35.558Z",
+    "data": {
+      "id": "1750182635558",
+      "timestamp": "2025-06-17T17:50:35.558Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        86,
+        87,
+        88,
+        91,
+        92,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T17:51:12.349Z",
+    "data": {
+      "id": "1750182672349",
+      "timestamp": "2025-06-17T17:51:12.349Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ]
+    }
+  },
+  {
+    "type": "session",
+    "timestamp": "2025-06-17T18:45:01.182Z",
+    "data": {
+      "id": "1750185901182",
+      "project": "Portfolio-architecte-sophie-bluel-master",
+      "start": "2025-06-17T18:45:01.182Z",
+      "end": "2025-06-17T18:51:18.619Z"
+    }
+  },
+  {
+    "type": "session",
+    "timestamp": "2025-06-17T18:51:18.619Z",
+    "data": {
+      "id": "1750185901182",
+      "project": "Portfolio-architecte-sophie-bluel-master",
+      "start": "2025-06-17T18:45:01.182Z",
+      "end": "2025-06-17T18:51:18.619Z"
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T18:53:23.757Z",
+    "data": {
+      "id": "1750186403757",
+      "timestamp": "2025-06-17T18:53:23.757Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        0,
+        1,
+        90,
+        107,
+        108,
+        109,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T18:55:07.328Z",
+    "data": {
+      "id": "1750186507328",
+      "timestamp": "2025-06-17T18:55:07.328Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        134
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T18:55:20.463Z",
+    "data": {
+      "id": "1750186520463",
+      "timestamp": "2025-06-17T18:55:20.463Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        110
+      ]
+    }
+  },
+  {
+    "type": "session",
+    "timestamp": "2025-06-17T18:56:14.405Z",
+    "data": {
+      "id": "1750186574405",
+      "project": "Portfolio-architecte-sophie-bluel-master",
+      "start": "2025-06-17T18:56:14.405Z",
+      "end": "2025-06-17T18:56:14.405Z"
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T18:56:55.864Z",
+    "data": {
+      "id": "1750186615864",
+      "timestamp": "2025-06-17T18:56:55.864Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\login.html",
+      "changedLines": [
+        19
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T18:57:43.107Z",
+    "data": {
+      "id": "1750186663107",
+      "timestamp": "2025-06-17T18:57:43.107Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\script.js",
+      "changedLines": [
+        134,
+        135
+      ]
+    }
   }
 ]
