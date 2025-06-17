@@ -33,6 +33,9 @@ async function showFilters() {              //  fonction pour afficher les filtr
         
         allButton.addEventListener('click', () => {
             projectContainer.innerHTML = "";
+            const filters = document.querySelectorAll('.filter');
+            filters.forEach(f => {f.classList.remove('filter__selected')});
+            allButton.classList.add('filter__selected');
             showProjects(allWorks);
         })
 
@@ -50,6 +53,9 @@ async function showFilters() {              //  fonction pour afficher les filtr
                 const filteredWorks = allWorks.filter(            //  on creer une varaiable avec les projet filtrés via .filter(parametre du filtre)
                     work => work.categoryId === categoryId
                 );
+                const filters = document.querySelectorAll('.filter');
+                filters.forEach(f => {f.classList.remove('filter__selected')});
+                button.classList.add('filter__selected');
                 showProjects(filteredWorks);    //   on affiche que les projets filtrés
             })
         }   

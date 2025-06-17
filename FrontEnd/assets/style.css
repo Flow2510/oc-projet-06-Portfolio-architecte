@@ -210,7 +210,7 @@ footer nav ul {
 
 .filter{
 	color: var(--button-color);
-	border: 1px solid;
+	border: 1px solid var(--button-color);
 	background-color: transparent;
 	border-radius: 9999px;
 	padding: 0.8rem 1.5rem;
@@ -228,6 +228,10 @@ footer nav ul {
 	color: white;
 }
 
+.filter__selected{
+	background-color: var(--button-color);
+	color: white;
+}
 /* Login page */
 
 .login{
@@ -240,7 +244,7 @@ footer nav ul {
 	flex-direction: column;
 	margin: 0 auto;
 	text-align: left;
-	max-width: 350px;
+	max-width: 400px;
 }
 
 .login__label{
