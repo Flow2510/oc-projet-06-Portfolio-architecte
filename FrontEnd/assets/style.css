@@ -106,6 +106,10 @@ nav li {
 	color: inherit;
 }
 
+.header__link-login{
+	font-weight: 600;
+}
+
 li:hover {
 	color: #B1663C;
 }
