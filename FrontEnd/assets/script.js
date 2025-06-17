@@ -65,24 +65,24 @@ async function showFilters() {              //  fonction pour afficher les filtr
     }
 }
 
-async function login() {
+async function login() {                                        //    fonction pour se login
     const email = inputEmail.value.trim();
     const password = inputPassword.value.trim();
-    const response = await fetch('http://localhost:5678/api/users/login', {
+    const response = await fetch('http://localhost:5678/api/users/login', {         //    on demande a l'api
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email , password })
+        body: JSON.stringify({ email , password })                     //   transforme un objet js en chaine de caractere Json  pour communiquer avec l'api
     })
 
-    if (!response.ok) {
+    if (!response.ok) {                                             //   si la reponse n'est pas OK => erreur
             alert("Identifiants invalides.");
         }
 
-    const data = await response.json();
+    const data = await response.json();                                 // attend la reponse de l'api qui va nous fournir un token si OK
     
-    if (data.token) {
+    if (data.token) {                                   //    si ok, on enregistre le token dans le localstorage et retour a index
         localStorage.setItem('authToken', data.token);
         window.location.href = 'index.html';
     }
@@ -115,35 +115,43 @@ if (buttonLogin) {
         const email = inputEmail.value.trim();
         const password = inputPassword.value.trim();
         
-        if (email === "") {           // si l'input est vide on met une erreur
+        if (email === "") {                                     // si l'input est vide on met une erreur
             inputEmail.style.border = "1px solid red";
             emailError.classList.add('login__error');
             emailError.innerText = 'Veuillez mettre une adresse email';
-         } else if(password === "") {
+         } else if(password === "") {                           // si l'input est vide on met une erreur
             inputPassword.style.border = "1px solid red";
             passwordError.classList.add('login__error');
             passwordError.innerText = 'Veuillez remplir le mot de passe';
-        } else {
-            inputEmail.style.border = "";
+        } else {                                                //    reset des erreurs 
+            inputEmail.style.border = "";               
             emailError.classList.remove('login__error');
             emailError.innerText = '';
             inputPassword.style.border = "";
             passwordError.classList.remove('login__error');
             passwordError.innerText = '';
 
-            login();
+            login();                                            //   appel de la fonction login
         }
     });
 }
 
-if (token){
+if (token){                 // si on a un token  =>
     logout = document.querySelector('.header__login-index')
     logout.innerText = "logout";
 
-    logout.addEventListener('click', function(event) {
+    logout.addEventListener('click', function(event) {          //    event pour se deco si on a un token
         event.preventDefault();
         localStorage.removeItem("authToken");
         window.location.reload();
+    })
+
+    const editBanner = document.querySelector('.edit');
+    const portfolioEdit = document.querySelector('.portfolio__edit')
+    editBanner.style.display = "flex";
+    categorysWrapper.style.visibility = "hidden";
+    portfolioEdit.addEventListener('click', () => {
+        //       faire apparaitre la modal
     })
 }
 
