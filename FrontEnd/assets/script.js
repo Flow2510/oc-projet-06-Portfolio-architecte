@@ -28,6 +28,7 @@ async function showFilters() {              //  fonction pour afficher les filtr
 
         const allButton = document.createElement('button');         // creation du bouton Tous
         allButton.innerText = "Tous";
+        allButton.classList.add('filter');
         categorysWrapper.appendChild(allButton);
         
         allButton.addEventListener('click', () => {
@@ -35,7 +36,7 @@ async function showFilters() {              //  fonction pour afficher les filtr
             showProjects(allWorks);
         })
 
-        const categorys = await response.json();
+        const categorys = await response.json();            
         for (let category of categorys){
             const button = document.createElement('button');
             button.classList.add('filter');
@@ -57,7 +58,7 @@ async function showFilters() {              //  fonction pour afficher les filtr
     }
 }
 
-function showProjects(worksToShow) {     //   fonction pour afficher les projets dans la gallerie (on reprend le tableau worksToShow en parametre pour afficher que ce que je veux du tableau, je filtrai bien le tableau mais je reafficher a chaque fois TOUS les projets du coup je comprenais pas)
+function showProjects(worksToShow) {     //   fonction pour afficher les projets dans la gallerie (on reprend le tableau worksToShow en parametre pour afficher que ce que je veux du tableau, je filtrai bien le tableau mais je reafficher a chaque fois TOUT les projets du coup je comprenais pas)
     projectContainer.innerHTML = "";
     for (let work of worksToShow) {
         const figure = document.createElement('figure');

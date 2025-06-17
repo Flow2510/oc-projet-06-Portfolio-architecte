@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+:root{
+	--button-color: hsla(169, 54%, 25%, 1);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -188,6 +192,25 @@ footer nav ul {
 
 /* filtres */
 
+.filters_wrapper{
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
 .filter{
-	margin: 0;
+	color: var(--button-color);
+	border: 1px solid;
+	background-color: transparent;
+	border-radius: 9999px;
+	padding: 0.8rem 1.5rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+	min-width: fit-content;
+	margin: 0.5rem;
+	cursor: pointer;
+}
+
+.filter:hover{
+	background-color: var(--button-color);
+	color: white;
 }
