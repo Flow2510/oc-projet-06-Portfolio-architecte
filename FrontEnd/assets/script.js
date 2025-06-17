@@ -104,6 +104,22 @@ function showProjects(worksToShow) {     //   fonction pour afficher les projets
     }
 }
 
+function showModalProject(){
+    for (let project of allWorks){
+        const modalGallery = document.querySelector('.modal__gallery')
+        const div = document.createElement('div');
+        const i = document.createElement('i');
+        const img = document.createElement('img');
+        img.src = `${project.imageUrl}`;
+        div.classList.add('modal__gallery-project');
+        div.appendChild(img);
+        i.classList.add('fa-regular');
+        i.classList.add('fa-trash-can');
+        div.appendChild(i);
+        modalGallery.appendChild(div);
+    }
+}
+
 const buttonLogin = document.querySelector('.login__button');
 const inputEmail = document.querySelector('.login__input-email');
 const inputPassword = document.querySelector('.login__input-password');
@@ -146,12 +162,16 @@ if (token){                 // si on a un token  =>
         window.location.reload();
     })
 
+   
+
     const editBanner = document.querySelector('.edit');
     const portfolioEdit = document.querySelector('.portfolio__edit')
+    const modal = document.querySelector('.modal');
     editBanner.style.display = "flex";
     categorysWrapper.style.visibility = "hidden";
     portfolioEdit.addEventListener('click', () => {
-        //       faire apparaitre la modal
+        modal.style.display = 'flex';
+        showModalProject();
     })
 }
 

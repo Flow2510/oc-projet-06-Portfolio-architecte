@@ -77,11 +77,39 @@
 		</ul>
 	</nav>
 </footer>
-<dialog class="modal">
-	<div class="modal__wrapper">
-
+<div role="dialog" class="modal">
+	<div class="modal__gallery-wrapper">
+		<div class="modal__gallery-navigation">
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+		<h3 class="modal__gallery-title">Galerie photo</h3>
+		<div class="modal__gallery">
+			<!-- affichage via JS -->
+		</div>
+		<div class="modal__gallery-banner"></div>
+		<button class="modal__gallery-button">Ajouter une photo</button>
 	</div>
-</dialog>
+	<div class="modal__add-wrapper">
+		<div class="modal__add-navigation">
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+		<h3>Ajout photo</h3>
+		<form action="#" class="">
+			<div>
+				<i class="fa-regular fa-image"></i>
+				<button></button>
+				<span>jpg, png : 4mo max</span>
+			</div>
+			<label for="">Titre</label>
+			<input type="text">
+			<select name="" id="">
+				<option value=""></option>
+			</select>
+			<div class="separator"></div>
+			<button>Valider</button>
+		</form>
+	</div>
+</div>
 <script src="assets/script.js"></script>
 </body>
 </html>
