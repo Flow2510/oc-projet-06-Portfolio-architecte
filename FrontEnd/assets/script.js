@@ -80,8 +80,40 @@ function showProjects(worksToShow) {     //   fonction pour afficher les projets
     }
 }
 
-(async () => {          
+const buttonLogin = document.querySelector('.login__button');
+const inputEmail = document.querySelector('.login__input-email');
+const inputPassword = document.querySelector('.login__input-password');
+const emailError = document.querySelector('.login__error-email');
+const passwordError = document.querySelector('.login__error-password');
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (buttonLogin) {
+    buttonLogin.addEventListener('click', () => {
+        if (inputEmail.value.trim() === "") {           // si l'input est vide on met une erreur
+            inputEmail.style.border = "1px solid red";
+            emailError.classList.add('login__error');
+            emailError.innerText = 'Veuillez mettre une adresse email';
+        } else if(inputPassword.value.trim() === "") {
+            inputPassword.style.border = "1px solid red";
+            passwordError.classList.add('login__error');
+            passwordError.innerText = 'Veuillez remplir le mot de passe';
+        } else {
+            inputEmail.style.border = "";
+            emailError.classList.remove('login__error');
+            emailError.innerText = '';
+            inputPassword.style.border = "";
+            passwordError.classList.remove('login__error');
+            passwordError.innerText = '';
+
+            // faire une fonction pour envoyer et comparer les identifiants
+        }
+    });
+}
+
+if (projectContainer) {
+    (async () => {          
     await chargingProject();        //  on attend que la fonction ai fini de s'executer
     showProjects(allWorks);
     showFilters(); 
 })();
+}
