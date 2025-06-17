@@ -65,6 +65,29 @@ async function showFilters() {              //  fonction pour afficher les filtr
     }
 }
 
+async function login() {
+    const email = inputEmail.value.trim();
+    const password = inputPassword.value.trim();
+    const response = await fetch('http://localhost:5678/api/users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email , password })
+    })
+
+    if (!response.ok) {
+            alert("Identifiants invalides.");
+        }
+
+    const data = await response.json();
+    
+    if (data.token) {
+        localStorage.setItem('authToken', data.token);
+        window.location.href = 'index.html';
+    }
+}
+
 function showProjects(worksToShow) {     //   fonction pour afficher les projets dans la gallerie (on reprend le tableau worksToShow en parametre pour afficher que ce que je veux du tableau, je filtrai bien le tableau mais je reafficher a chaque fois TOUT les projets du coup je comprenais pas)
     projectContainer.innerHTML = "";
     for (let work of worksToShow) {
@@ -113,28 +136,15 @@ if (buttonLogin) {
     });
 }
 
-async function login() {
-    const email = inputEmail.value.trim();
-    const password = inputPassword.value.trim();
-    const response = await fetch('http://localhost:5678/api/users/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email , password })
+if (token){
+    logout = document.querySelector('.header__login-index')
+    logout.innerText = "logout";
+
+    logout.addEventListener('click', function(event) {
+        event.preventDefault();
+        localStorage.removeItem("authToken");
+        window.location.reload();
     })
-
-    if (!response.ok) {
-            alert("Identifiants invalides.");
-        }
-
-    const data = await response.json();
-    
-    if (data.token) {
-        localStorage.setItem('authToken', data.token);
-        document.querySelector('.header__link-login').innerText = "logout";
-        window.location.href = 'index.html';
-    }
 }
 
 if (projectContainer) {
