@@ -1,7 +1,7 @@
 let allWorks = [];  // on declare un nouveau tableau pour utilisé la variable works globalement
 
 const projectContainer = document.querySelector('.gallery');
-const categorysWrapper = document.querySelector('.filters_wrapper');
+const categorysWrapper = document.querySelector('.filters__wrapper');
     
 async function chargingProject(){           //  fonction pour afficher les projets
     try {                   

@@ -51,6 +51,7 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
 body {
 	max-width: 1140px;
 	margin:auto;
@@ -97,6 +98,11 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+}
+
+.header__link{										/*  lien header  */
+	text-decoration: none;
+	color: inherit;
 }
 
 li:hover {
@@ -192,7 +198,7 @@ footer nav ul {
 
 /* filtres */
 
-.filters_wrapper{
+.filters__wrapper{
 	margin-bottom: 2rem;
 	text-align: center;
 }
@@ -213,4 +219,32 @@ footer nav ul {
 .filter:hover{
 	background-color: var(--button-color);
 	color: white;
+}
+
+/* Login page */
+
+.login{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.login__wrapper{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.login__label{
+	padding-top: 1rem;
+}
+
+.login__button{
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.login__link-forget{
+	color: inherit;
 }
