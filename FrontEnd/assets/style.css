@@ -340,6 +340,7 @@ footer nav ul {
 	padding: 1.5rem;
 	max-width: 600px;
 	text-align: center;
+	border-radius: 1rem;
 }
 
 .modal__gallery-navigation{
@@ -454,6 +455,10 @@ footer nav ul {
 	margin: 0.5rem 0;
 }
 
+.add__preview-preview{
+	max-width: 125px;
+}
+
 .modal__add-form{
 	display: flex;
 	flex-direction: column;
@@ -472,6 +477,7 @@ footer nav ul {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	padding-left: 0.5rem;
+	outline: none;
 }
 
 .modal__add-banner{

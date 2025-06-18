@@ -119,7 +119,19 @@ function showModalProject(){            // fonction pour afficher toutes les ima
         i.classList.add('fa-trash-can');
         div.appendChild(i);
         modalGallery.appendChild(div);
+        i.addEventListener('click', () => {
+            console.log(project.id);
+            //faire une fonction pour supprimer un projet via l'api
+        })
     }
+}
+
+function deleteProject(){       // fonction pour supprimer les projets
+    
+}
+
+function uploadProject(){
+
 }
 
 async function showOptions() {
@@ -206,6 +218,7 @@ if (token){                 // si on a un token  =>
         modalGalleryButton.addEventListener('click', () => {
             modalGalleryWrapper.style.display = "none";
             modalAddWrapper.style.display = "block";
+            document.querySelector('.modal__add-select').innerHTML = `<option class="modal__add-option" value="" disabled selected></option>`;
             showOptions();
         })
     }
@@ -217,7 +230,7 @@ if (token){                 // si on a un token  =>
             modal.style.display = "none";
             modalGalleryWrapper.style.display = "block";
             modalAddWrapper.style.display = "";
-            form.reset();
+            
         })
     }
 
@@ -235,8 +248,55 @@ if (token){                 // si on a un token  =>
     addPreviewButton.addEventListener('click', () => {    //   simule un click sur l'input qui est caché
         addPreviewInput.click();
 
-        // faire en sorte que l'image mis dans l'input soit lu (la save et la lire avec reader)
+        addPreviewInput.addEventListener('change', function(event) {   //  affichage de la previsualisation de l'input
+            const file = event.target.files[0];
+            if(!file) return;
+
+            const reader = new FileReader();    // API native pour lire les fichier upload par l'utilisateur
+            reader.onload = function(e){        // une fois que l'image a chargé
+                const previewWrapper = document.querySelector('.add__preview-wrapper');
+                previewWrapper.innerHTML = "";
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('add__preview-preview');
+                previewWrapper.appendChild(img);
+            }
+
+            reader.readAsDataURL(file);   //  pour lire l'image
+        })
     })
+
+    const modalAddButton = document.querySelector('.modal__add-button');
+    const modalAddInput = document.querySelector('.modal__add-input');
+    const modalAddSelect = document.querySelector('.modal__add-select');
+    const previewWrapper = document.querySelector('.add__preview-wrapper');
+    if (modalAddButton){
+        modalAddButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            if(modalAddInput.value === '') {
+                modalAddInput.style.border = '1px solid red';
+            } else{
+                modalAddInput.style.border = '';
+            }
+
+            if (modalAddSelect.value === ""){
+                modalAddSelect.style.border = '1px solid red';
+            } else {
+                modalAddSelect.style.border = '';
+            }
+
+            if (addPreviewInput.files.length === 0){
+                previewWrapper.style.border = '1px solid red';
+            } else {
+                previewWrapper.style.border = '';
+            }
+
+            if(modalAddSelect.value !== "" && modalAddInput.value !== '' && addPreviewInput.files.length > 0){  // si l'input a une image, un titre, et categorie selectionné =>
+                console.log('ok');
+                // faire une fonction pour upload un nouveau projet
+            }
+        })
+    }
 }
 
 if (projectContainer) {
@@ -246,4 +306,3 @@ if (projectContainer) {
     showFilters(); 
 })();
 }
-
