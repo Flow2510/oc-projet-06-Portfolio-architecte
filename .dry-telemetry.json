@@ -3092,5 +3092,31 @@
         351
       ]
     }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T21:18:08.065Z",
+    "data": {
+      "id": "1750195088065",
+      "timestamp": "2025-06-17T21:18:08.065Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\assets\\style.css",
+      "changedLines": [
+        352
+      ]
+    }
+  },
+  {
+    "type": "fileSave",
+    "timestamp": "2025-06-17T21:18:08.073Z",
+    "data": {
+      "id": "1750195088073",
+      "timestamp": "2025-06-17T21:18:08.073Z",
+      "type": "fileSave",
+      "filePath": "c:\\Users\\sendr\\Documents\\Dev\\Openclassroom\\Portfolio-architecte-sophie-bluel-master\\Portfolio-architecte-sophie-bluel-master\\FrontEnd\\index.html",
+      "changedLines": [
+        82
+      ]
+    }
   }
 ]

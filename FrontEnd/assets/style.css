@@ -335,7 +335,7 @@ footer nav ul {
 	align-items: center;
 }
 
-.modal__gallery-wrapper{
+.modal__gallery-wrapper, .modal__add-wrapper{
 	background-color: white;
 	padding: 1.5rem;
 	max-width: 600px;
@@ -352,7 +352,7 @@ footer nav ul {
 	cursor: pointer;
 }
 
-.modal__gallery-title{
+.modal__gallery-title, .modal__add-title{
 	font-size: 1.5rem;
 	margin: 1rem auto 2rem;
 	text-align: center;
@@ -409,4 +409,33 @@ footer nav ul {
 
 .modal__add-wrapper{
 	display: none;
+}
+
+.modal__add-navigation{
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.2rem;
+}
+
+.add__preview-wrapper{
+	display: flex;
+	flex-direction: column;
+	background-color: hsla(202, 46%, 94%, 1);
+}
+
+.add__preview-label{
+	display: none;
+}
+
+.modal__add-button{									/* mettre les bonnes couleurs pour le bouton ici */
+	background-color: var(--button-color);
+	border: 1px solid var(--button-color);
+	color: white;
+	border-radius: 9999px;
+	padding: 0.8rem 3.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	width: fit-content;
+	cursor: pointer;
+	font-family: "syne";
 }

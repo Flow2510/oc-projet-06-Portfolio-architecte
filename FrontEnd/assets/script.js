@@ -178,6 +178,24 @@ if (token){                 // si on a un token  =>
             modal.style.display = "none";
         })
     }
+
+    const modalGalleryButton = document.querySelector('.modal__gallery-button');
+    const modalGalleryWrapper = document.querySelector('.modal__gallery-wrapper')
+    const modalAddWrapper = document.querySelector('.modal__add-wrapper')
+    if (modalGalleryButton){
+        modalGalleryButton.addEventListener('click', () => {
+            modalGalleryWrapper.style.display = "none";
+            modalAddWrapper.style.display = "block";
+        })
+    }
+
+    const addPreviewButton = document.querySelector('.add__preview-button');
+    const addPreviewInput = document.querySelector('.add__preview-input');
+    addPreviewButton.addEventListener('click', () => {    //   simule un click sur l'input qui est caché
+        addPreviewInput.click();
+
+        // faire en sorte que l'image mis dans l'input soit lu (la save et la lire avec reader)
+    })
 }
 
 if (projectContainer) {

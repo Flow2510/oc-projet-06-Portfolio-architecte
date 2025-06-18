@@ -91,22 +91,26 @@
 	</div>
 	<div class="modal__add-wrapper">
 		<div class="modal__add-navigation">
+			<i class="fa-solid fa-arrow-left"></i>
 			<i class="fa-solid fa-xmark"></i>
 		</div>
-		<h3>Ajout photo</h3>
-		<form action="#" class="">
-			<div>
-				<i class="fa-regular fa-image"></i>
-				<button></button>
-				<span>jpg, png : 4mo max</span>
+		<h3 class="modal__add-title">Ajout photo</h3>
+		<form action="#" class="modal__add-form">
+			<div class="add__preview-wrapper">
+				<i class="fa-regular fa-image add__preview-icon"></i>
+				<button class="add__preview-button">+ Ajouter photo</button>
+				<label class="add__preview-label" for="add__preview-input">
+					<input type="file" name="add__preview-input" id="add__preview-input" class="add__preview-input">
+				</label>				
+				<span class="add__preview-span">jpg, png : 4mo max</span>
 			</div>
-			<label for="">Titre</label>
-			<input type="text">
-			<select name="" id="">
-				<option value=""></option>
+			<label class="modal__add-label" for="modal__add-input">Titre</label>
+			<input class="modal__add-input" type="text" id="modal__add-input">
+			<select name="modal__add-select" id="modal__add-select" class="modal__add-select">
+				<option class="modal__add-option" value="#"></option>
 			</select>
-			<div class="separator"></div>
-			<button>Valider</button>
+			<div class="modal__add-banner"></div>
+			<button class="modal__add-button">Valider</button>
 		</form>
 	</div>
 </div>
