@@ -405,10 +405,12 @@ footer nav ul {
 	width: fit-content;
 	cursor: pointer;
 	font-family: "syne";
+	
 }
 
 .modal__add-wrapper{
 	display: none;
+	width: 100%;
 }
 
 .modal__add-navigation{
@@ -417,14 +419,66 @@ footer nav ul {
 	font-size: 1.2rem;
 }
 
+.modal__add-navigation i{
+	cursor: pointer;
+}
+
 .add__preview-wrapper{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	background-color: hsla(202, 46%, 94%, 1);
+	color: hsla(201, 47%, 35%, 1);
+	padding: 1rem 0;
+}
+
+.add__preview-icon{
+	font-size: 5rem;
 }
 
 .add__preview-label{
 	display: none;
+}
+
+.add__preview-button{
+	background-color: hsla(201, 19%, 83%, 1);
+	color: hsla(201, 47%, 35%, 1);
+	border: none;
+	border-radius: 9999px;
+	padding: 0.8rem 3.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	width: fit-content;
+	cursor: pointer;
+	font-family: "syne";
+	margin: 0.5rem 0;
+}
+
+.modal__add-form{
+	display: flex;
+	flex-direction: column;
+	max-width: 80%;
+	margin: auto;
+}
+
+.modal__add-label{
+	align-self: flex-start;
+	margin: 1rem 0 0.5rem;
+}
+
+.modal__add-input, .modal__add-select, .modal__add-select{
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	padding-left: 0.5rem;
+}
+
+.modal__add-banner{
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 2px;
+	margin: 2rem auto;
+	width: 100%;
 }
 
 .modal__add-button{									/* mettre les bonnes couleurs pour le bouton ici */
@@ -438,4 +492,5 @@ footer nav ul {
 	width: fit-content;
 	cursor: pointer;
 	font-family: "syne";
+	align-self: center;
 }

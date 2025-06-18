@@ -91,8 +91,8 @@
 	</div>
 	<div class="modal__add-wrapper">
 		<div class="modal__add-navigation">
-			<i class="fa-solid fa-arrow-left"></i>
-			<i class="fa-solid fa-xmark"></i>
+			<i class="fa-solid fa-arrow-left modal__add-return"></i>
+			<i class="fa-solid fa-xmark modal__add-close"></i>
 		</div>
 		<h3 class="modal__add-title">Ajout photo</h3>
 		<form action="#" class="modal__add-form">
@@ -106,8 +106,9 @@
 			</div>
 			<label class="modal__add-label" for="modal__add-input">Titre</label>
 			<input class="modal__add-input" type="text" id="modal__add-input">
+			<label class="modal__add-label" for="modal__add-select">Catégorie</label>
 			<select name="modal__add-select" id="modal__add-select" class="modal__add-select">
-				<option class="modal__add-option" value="#"></option>
+				<option class="modal__add-option" value="" disabled selected></option>
 			</select>
 			<div class="modal__add-banner"></div>
 			<button class="modal__add-button">Valider</button>

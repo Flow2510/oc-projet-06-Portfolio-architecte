@@ -40,7 +40,7 @@ async function showFilters() {              //  fonction pour afficher les filtr
             showProjects(allWorks);
         })
 
-        const categorys = await response.json();            
+        const categorys = await response.json();         
         for (let category of categorys){
             const button = document.createElement('button');
             button.classList.add('filter');
@@ -104,9 +104,11 @@ function showProjects(worksToShow) {     //   fonction pour afficher les projets
     }
 }
 
-function showModalProject(){
+function showModalProject(){            // fonction pour afficher toutes les images des projets dans la galerie du modal
+    const modalGallery = document.querySelector('.modal__gallery');    //   on vide la galerie a chaque fois pour les recharger
+    modalGallery.innerHTML = "";
+
     for (let project of allWorks){
-        const modalGallery = document.querySelector('.modal__gallery')
         const div = document.createElement('div');
         const i = document.createElement('i');
         const img = document.createElement('img');
@@ -118,6 +120,24 @@ function showModalProject(){
         div.appendChild(i);
         modalGallery.appendChild(div);
     }
+}
+
+async function showOptions() {
+    const response = await fetch('http://localhost:5678/api/categories');
+
+    if (!response.ok){                             // on gere les erreurs
+            throw new Error(`Erreur HTTP : ${response.status}`);
+        }
+
+    const categorys = await response.json();         
+        for (let category of categorys){
+            const select = document.querySelector('.modal__add-select');
+            const option = document.createElement('option');
+            option.classList.add('modal__add-option');
+            option.value = `${category.id}`;
+            option.innerText = `${category.name}`;
+            select.appendChild(option);
+        }
 }
 
 const buttonLogin = document.querySelector('.login__button');
@@ -186,6 +206,27 @@ if (token){                 // si on a un token  =>
         modalGalleryButton.addEventListener('click', () => {
             modalGalleryWrapper.style.display = "none";
             modalAddWrapper.style.display = "block";
+            showOptions();
+        })
+    }
+
+    const form = document.querySelector('.modal__add-form')
+    const modalAddClose = document.querySelector('.modal__add-close');
+    if (modalAddClose){
+        modalAddClose.addEventListener('click', () => {
+            modal.style.display = "none";
+            modalGalleryWrapper.style.display = "block";
+            modalAddWrapper.style.display = "";
+            form.reset();
+        })
+    }
+
+    const modalAddReturn = document.querySelector('.modal__add-return');
+    if (modalAddReturn){
+        modalAddReturn.addEventListener('click', () => {
+            modalGalleryWrapper.style.display = "block";
+            modalAddWrapper.style.display = "";
+            form.reset();
         })
     }
 
@@ -205,3 +246,4 @@ if (projectContainer) {
     showFilters(); 
 })();
 }
+
