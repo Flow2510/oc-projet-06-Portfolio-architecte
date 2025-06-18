@@ -126,12 +126,12 @@ function showModalProject(){            // fonction pour afficher toutes les ima
     }
 }
 
-function deleteProject(){       // fonction pour supprimer les projets
+function deleteProject(){       // fonction pour supprimer un projet
     
 }
 
-function uploadProject(){
-
+async function uploadProject(){       //  fonction pour ajouter un projet
+    
 }
 
 async function showOptions() {
@@ -157,6 +157,14 @@ const inputEmail = document.querySelector('.login__input-email');
 const inputPassword = document.querySelector('.login__input-password');
 const emailError = document.querySelector('.login__error-email');
 const passwordError = document.querySelector('.login__error-password');
+
+if (projectContainer) {
+    (async () => {          
+    await chargingProject();        //  on attend que la fonction ai fini de s'executer
+    showProjects(allWorks);
+    showFilters(); 
+})();
+}
 
 if (buttonLogin) {
     buttonLogin.addEventListener('click', () => {
@@ -297,12 +305,4 @@ if (token){                 // si on a un token  =>
             }
         })
     }
-}
-
-if (projectContainer) {
-    (async () => {          
-    await chargingProject();        //  on attend que la fonction ai fini de s'executer
-    showProjects(allWorks);
-    showFilters(); 
-})();
 }
