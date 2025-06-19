@@ -153,6 +153,8 @@ async function uploadProject(){       //  fonction pour ajouter un projet
 
     const newProject = await response.json();
     console.log(newProject);
+    
+    alert('Projet upload');
 
     } catch (error){
          console.error('Erreur lors de l’envoi :', error);
@@ -334,8 +336,8 @@ if (token){                 // si on a un token  =>
             }
 
             if(modalAddSelect.value !== "" && modalAddInput.value !== '' && addPreviewInput.files.length > 0){  // si l'input a une image, un titre, et categorie selectionné =>
-                console.log("Token utilisé :", token);
                 uploadProject();
+                form.reset();
             }
         })
     }
