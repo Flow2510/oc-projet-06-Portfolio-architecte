@@ -126,12 +126,37 @@ function showModalProject(){            // fonction pour afficher toutes les ima
     }
 }
 
-function deleteProject(){       // fonction pour supprimer un projet
+async function deleteProject(){       // fonction pour supprimer un projet
     
 }
 
 async function uploadProject(){       //  fonction pour ajouter un projet
-    
+    const addPreviewInput = document.querySelector('.add__preview-input');
+    const modalAddInput = document.querySelector('.modal__add-input');
+    const modalAddSelect = document.querySelector('.modal__add-select');
+    const newData = new FormData();         // creation d'un nouveau formulaire
+    formData.append('image', addPreviewInput.files[0]); //ajout des données au formulaire
+    formData.append('title', modalAddInput.value);
+    formData.append('category', modalAddSelect.value);
+
+    try{
+        const response = await fetch('http://localhost:5678/api/works', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            body: newData
+        });
+    if(!response.ok){
+        throw new Error(`Erreur HTTP ${response.status}`);
+    } 
+
+    const newProject = await response.json();
+    console.log(newProject);
+
+    } catch (error){
+         console.error('Erreur lors de l’envoi :', error);
+    }
 }
 
 async function showOptions() {
