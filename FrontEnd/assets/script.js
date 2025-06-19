@@ -40,7 +40,7 @@ async function showFilters() {              //  fonction pour afficher les filtr
             showProjects(allWorks);
         })
 
-        const categorys = await response.json();         
+        const categorys = await response.json();         // creation des boutons filtres
         for (let category of categorys){
             const button = document.createElement('button');
             button.classList.add('filter');
@@ -121,7 +121,7 @@ function showModalProject(){            // fonction pour afficher toutes les ima
         modalGallery.appendChild(div);
         i.addEventListener('click', () => {
             console.log(project.id);
-            //faire une fonction pour supprimer un projet via l'api
+            //faire une fonction pour supprimer un projet via l'api avec project.id pour le numero du projet
         })
     }
 }
@@ -135,9 +135,9 @@ async function uploadProject(){       //  fonction pour ajouter un projet
     const modalAddInput = document.querySelector('.modal__add-input');
     const modalAddSelect = document.querySelector('.modal__add-select');
     const newData = new FormData();         // creation d'un nouveau formulaire
-    formData.append('image', addPreviewInput.files[0]); //ajout des données au formulaire
-    formData.append('title', modalAddInput.value);
-    formData.append('category', modalAddSelect.value);
+    newData.append('image', addPreviewInput.files[0]); //ajout des données au formulaire
+    newData.append('title', modalAddInput.value);
+    newData.append('category', modalAddSelect.value);
 
     try{
         const response = await fetch('http://localhost:5678/api/works', {
@@ -159,7 +159,7 @@ async function uploadProject(){       //  fonction pour ajouter un projet
     }
 }
 
-async function showOptions() {
+async function showOptions() {          // fonction pour afficher les categories dans le select
     const response = await fetch('http://localhost:5678/api/categories');
 
     if (!response.ok){                             // on gere les erreurs
@@ -230,6 +230,7 @@ if (token){                 // si on a un token  =>
     const editBanner = document.querySelector('.edit');         //   affichage du modal
     const portfolioEdit = document.querySelector('.portfolio__edit')
     const modal = document.querySelector('.modal');
+    portfolioEdit.style.display = "flex";
     editBanner.style.display = "flex";
     categorysWrapper.style.visibility = "hidden";
     portfolioEdit.addEventListener('click', () => {
@@ -277,8 +278,9 @@ if (token){                 // si on a un token  =>
     }
 
     const addPreviewButton = document.querySelector('.add__preview-button');
-    const addPreviewInput = document.querySelector('.add__preview-input');
-    addPreviewButton.addEventListener('click', () => {    //   simule un click sur l'input qui est caché
+    if (addPreviewButton){
+        addPreviewButton.addEventListener('click', () => {    //   simule un click sur l'input qui est caché
+        const addPreviewInput = document.querySelector('.add__preview-input');
         addPreviewInput.click();
 
         addPreviewInput.addEventListener('change', function(event) {   //  affichage de la previsualisation de l'input
@@ -288,7 +290,10 @@ if (token){                 // si on a un token  =>
             const reader = new FileReader();    // API native pour lire les fichier upload par l'utilisateur
             reader.onload = function(e){        // une fois que l'image a chargé
                 const previewWrapper = document.querySelector('.add__preview-wrapper');
-                previewWrapper.innerHTML = "";
+                const previewWrapperChild = previewWrapper.children;
+                for(let child of previewWrapperChild){
+                    child.style.display = "none";
+                }
                 const img = document.createElement('img');
                 img.src = e.target.result;
                 img.classList.add('add__preview-preview');
@@ -298,7 +303,9 @@ if (token){                 // si on a un token  =>
             reader.readAsDataURL(file);   //  pour lire l'image
         })
     })
+    }
 
+    const addPreviewInput = document.querySelector('.add__preview-input');
     const modalAddButton = document.querySelector('.modal__add-button');
     const modalAddInput = document.querySelector('.modal__add-input');
     const modalAddSelect = document.querySelector('.modal__add-select');
@@ -306,6 +313,7 @@ if (token){                 // si on a un token  =>
     if (modalAddButton){
         modalAddButton.addEventListener('click', function (event) {
             event.preventDefault();
+            
             if(modalAddInput.value === '') {
                 modalAddInput.style.border = '1px solid red';
             } else{
@@ -318,6 +326,7 @@ if (token){                 // si on a un token  =>
                 modalAddSelect.style.border = '';
             }
 
+            
             if (addPreviewInput.files.length === 0){
                 previewWrapper.style.border = '1px solid red';
             } else {
@@ -325,8 +334,8 @@ if (token){                 // si on a un token  =>
             }
 
             if(modalAddSelect.value !== "" && modalAddInput.value !== '' && addPreviewInput.files.length > 0){  // si l'input a une image, un titre, et categorie selectionné =>
-                console.log('ok');
-                // faire une fonction pour upload un nouveau projet
+                console.log("Token utilisé :", token);
+                uploadProject();
             }
         })
     }

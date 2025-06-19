@@ -222,6 +222,7 @@ footer nav ul {
 
 .portfolio__edit{
 	position: absolute;
+	display: none;
 	top: 0.6rem;
 	left: 50%;
 	transform: translateX(8rem);
