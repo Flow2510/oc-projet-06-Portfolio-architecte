@@ -119,15 +119,28 @@ function showModalProject(){            // fonction pour afficher toutes les ima
         i.classList.add('fa-trash-can');
         div.appendChild(i);
         modalGallery.appendChild(div);
-        i.addEventListener('click', () => {
+        i.addEventListener('click', async () => {
             console.log(project.id);
+            try{
+                const response = await fetch(`http://localhost:5678/api/works/${project.id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+            if(!response.ok){
+                throw new Error(`Erreur HTTP ${response.status}`);
+            }            
+            alert('Projet supprimé');
+            await chargingProject();
+            showModalProject();
+
+            } catch (error){
+                console.error('Erreur lors de l’envoi :', error);
+            }
             //faire une fonction pour supprimer un projet via l'api avec project.id pour le numero du projet
         })
     }
-}
-
-async function deleteProject(){       // fonction pour supprimer un projet
-    
 }
 
 async function uploadProject(){       //  fonction pour ajouter un projet
