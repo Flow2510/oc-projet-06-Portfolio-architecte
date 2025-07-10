@@ -1,5 +1,5 @@
 let allWorks = [];  // on declare un nouveau tableau pour utilisé la variable works globalement
-const token = localStorage.getItem('authToken');    //    on regarde si on a un token ici
+const token = localStorage.getItem('authToken');    //    on stock et verifie si on a un token ici
 
 const projectContainer = document.querySelector('.gallery');
 const categorysWrapper = document.querySelector('.filters__wrapper');
@@ -119,7 +119,7 @@ function showModalProject(){            // fonction pour afficher toutes les ima
         i.classList.add('fa-trash-can');
         div.appendChild(i);
         modalGallery.appendChild(div);
-        i.addEventListener('click', async () => {
+        i.addEventListener('click', async () => {           // addevent pour supprimer un projet via l'api avec project.id pour le numero du projet
             console.log(project.id);
             try{
                 const response = await fetch(`http://localhost:5678/api/works/${project.id}`, {
@@ -138,7 +138,6 @@ function showModalProject(){            // fonction pour afficher toutes les ima
             } catch (error){
                 console.error('Erreur lors de l’envoi :', error);
             }
-            //faire une fonction pour supprimer un projet via l'api avec project.id pour le numero du projet
         })
     }
 }

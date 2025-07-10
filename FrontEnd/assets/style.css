@@ -371,6 +371,7 @@ footer nav ul {
 .modal__gallery{
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(1, 1fr);
 	gap: 1rem;
 	max-width: 80%;
 	margin: auto;
@@ -378,11 +379,14 @@ footer nav ul {
 
 .modal__gallery-project img{
 	width: 100%;
+	height: 100%;
+	object-fit: center;
 }
 
 .modal__gallery-project{
 	position: relative;
 	margin: auto;
+	height: 100%;
 }
 
 .modal__gallery-project i{
