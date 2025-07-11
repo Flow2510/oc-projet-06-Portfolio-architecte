@@ -134,6 +134,7 @@ function showModalProject(){            // fonction pour afficher toutes les ima
             alert('Projet supprimé');
             await chargingProject();
             showModalProject();
+            showProjects(allWorks);
 
             } catch (error){
                 console.error('Erreur lors de l’envoi :', error);
@@ -165,8 +166,9 @@ async function uploadProject(){       //  fonction pour ajouter un projet
 
     const newProject = await response.json();
     console.log(newProject);
-    
     alert('Projet upload');
+    showProjects(allWorks);
+    showModalProject();
 
     } catch (error){
          console.error('Erreur lors de l’envoi :', error);
@@ -352,6 +354,9 @@ if (token){                 // si on a un token  =>
             if(modalAddSelect.value !== "" && modalAddInput.value !== '' && addPreviewInput.files.length > 0){  // si l'input a une image, un titre, et categorie selectionné =>
                 uploadProject();
                 form.reset();
+                reader = null;
+                showModalProject();
+                showProjects(allWorks);
             }
         })
     }
