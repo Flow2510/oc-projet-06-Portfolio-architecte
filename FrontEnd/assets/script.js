@@ -297,7 +297,8 @@ if (token){                 // si on a un token  =>
 
     const addPreviewButton = document.querySelector('.add__preview-button');
     if (addPreviewButton){
-        addPreviewButton.addEventListener('click', () => {    //   simule un click sur l'input qui est caché
+        addPreviewButton.addEventListener('click', (f) => {    //   simule un click sur l'input qui est caché
+        f.stopPropagation();  // empeche la propagation du addevent qui peut interferer ( la, sans ca, de temps en temps la fenetre modal se ferme toute seule)
         const addPreviewInput = document.querySelector('.add__preview-input');
         addPreviewInput.click();
 
