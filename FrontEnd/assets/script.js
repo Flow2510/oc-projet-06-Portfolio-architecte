@@ -193,6 +193,13 @@ async function showOptions() {          // fonction pour afficher les categories
         }
 }
 
+function clearPreview() {
+    const previewWrapper = document.querySelector('.add__preview');
+    const previewImageWrapper = document.querySelector('.add__preview-image-wrapper');
+    previewImageWrapper.innerHTML = "";
+    previewWrapper.style.display = "";
+}
+
 const buttonLogin = document.querySelector('.login__button');
 const inputEmail = document.querySelector('.login__input-email');
 const inputPassword = document.querySelector('.login__input-password');
@@ -282,7 +289,7 @@ if (token){                 // si on a un token  =>
             modal.style.display = "none";
             modalGalleryWrapper.style.display = "block";
             modalAddWrapper.style.display = "";
-            
+            clearPreview();
         })
     }
 
@@ -292,43 +299,44 @@ if (token){                 // si on a un token  =>
             modalGalleryWrapper.style.display = "block";
             modalAddWrapper.style.display = "";
             form.reset();
+            clearPreview();
         })
     }
-
+    
     const addPreviewButton = document.querySelector('.add__preview-button');
-    if (addPreviewButton){
-        addPreviewButton.addEventListener('click', (f) => {    //   simule un click sur l'input qui est caché
-        f.stopPropagation();  // empeche la propagation du addevent qui peut interferer ( la, sans ca, de temps en temps la fenetre modal se ferme toute seule)
-        const addPreviewInput = document.querySelector('.add__preview-input');
-        addPreviewInput.click();
+    const addPreviewInput = document.querySelector('.add__preview-input');
+    const previewWrapper = document.querySelector('.add__preview');
+    const previewImageWrapper = document.querySelector('.add__preview-image-wrapper');
+
+    if (addPreviewButton && addPreviewInput) {
 
         addPreviewInput.addEventListener('change', function(event) {   //  affichage de la previsualisation de l'input
-            const file = event.target.files[0];
-            if(!file) return;
+            const file = event.target.files[0];         //  on selectionne le fichier dans l'input
+            if (!file) return;
 
-            const reader = new FileReader();    // API native pour lire les fichier upload par l'utilisateur
-            reader.onload = function(e){        // une fois que l'image a chargé
-                const previewWrapper = document.querySelector('.add__preview-wrapper');
-                const previewWrapperChild = previewWrapper.children;
-                for(let child of previewWrapperChild){
-                    child.style.display = "none";
-                }
+            previewImageWrapper.innerHTML = "";     // Vider l'image précédente
+
+            const reader = new FileReader();        // API native pour lire les fichier upload par l'utilisateur
+            reader.onload = function(e) {           // une fois que l'image a chargé
+                previewWrapper.style.display = "none";
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                img.classList.add('add__preview-preview');
-                previewWrapper.appendChild(img);
-            }
+                img.classList.add('add__preview-image');
+                previewImageWrapper.appendChild(img);
+            };
+            reader.readAsDataURL(file);   //  lire l'image
+        });
 
-            reader.readAsDataURL(file);   //  pour lire l'image
-        })
-    })
+        addPreviewButton.addEventListener('click', (f) => {
+            f.preventDefault();  //  resoud le bug de la disparition du modal au clique 
+            addPreviewInput.click();
+        });
     }
 
-    const addPreviewInput = document.querySelector('.add__preview-input');
     const modalAddButton = document.querySelector('.modal__add-button');
     const modalAddInput = document.querySelector('.modal__add-input');
     const modalAddSelect = document.querySelector('.modal__add-select');
-    const previewWrapper = document.querySelector('.add__preview-wrapper');
+    const wrapper = document.querySelector('.add__preview-wrapper');
     if (modalAddButton){
         modalAddButton.addEventListener('click', function (event) {
             event.preventDefault();
@@ -347,9 +355,9 @@ if (token){                 // si on a un token  =>
 
             
             if (addPreviewInput.files.length === 0){
-                previewWrapper.style.border = '1px solid red';
+                wrapper.style.border = '1px solid red';
             } else {
-                previewWrapper.style.border = '';
+                wrapper.style.border = '';
             }
 
             if(modalAddSelect.value !== "" && modalAddInput.value !== '' && addPreviewInput.files.length > 0){  // si l'input a une image, un titre, et categorie selectionné =>
