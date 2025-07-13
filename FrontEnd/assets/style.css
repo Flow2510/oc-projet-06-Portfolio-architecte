@@ -154,6 +154,18 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+.visually__hidden {		/* supprime le titre visuellement mais le laisse accessible pour les readers, moteur de recherches, etc... */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -380,7 +392,6 @@ footer nav ul {
 .modal__gallery-project img{
 	width: 100%;
 	height: 100%;
-	object-fit: center;
 }
 
 .modal__gallery-project{
