@@ -105,6 +105,10 @@ nav li {
 	font-size: 1.2em;
 }
 
+.header__title{
+	text-decoration: none;
+}
+
 .header__link{										/*  lien header  */
 	text-decoration: none;
 	color: inherit;
