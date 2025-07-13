@@ -475,6 +475,13 @@ footer nav ul {
 	max-width: 125px;
 }
 
+.add__preview-error, .add__input-error, .add__select-error{
+	color: red;
+	padding-top: 1rem;
+	display: none;
+	text-align: left;
+}
+
 .modal__add-form{
 	display: flex;
 	flex-direction: column;

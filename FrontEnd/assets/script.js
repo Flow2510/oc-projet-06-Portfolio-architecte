@@ -3,6 +3,15 @@ const token = localStorage.getItem('authToken');    //    on stock et verifie si
 
 const projectContainer = document.querySelector('.gallery');
 const categorysWrapper = document.querySelector('.filters__wrapper');
+const previewWrapper = document.querySelector('.add__preview');
+const previewImageWrapper = document.querySelector('.add__preview-image-wrapper');
+const previewError = document.querySelector('.add__preview-error');
+const inputError = document.querySelector('.add__input-error');
+const selectError = document.querySelector('.add__select-error');
+const modalAddButton = document.querySelector('.modal__add-button');
+const modalAddInput = document.querySelector('.modal__add-input');
+const modalAddSelect = document.querySelector('.modal__add-select');
+const wrapper = document.querySelector('.add__preview-wrapper');
     
 async function chargingProject(){           //  fonction pour afficher les projets
     try {                   
@@ -194,10 +203,17 @@ async function showOptions() {          // fonction pour afficher les categories
 }
 
 function clearPreview() {
-    const previewWrapper = document.querySelector('.add__preview');
-    const previewImageWrapper = document.querySelector('.add__preview-image-wrapper');
     previewImageWrapper.innerHTML = "";
     previewWrapper.style.display = "";
+}
+
+function clearError(){
+    previewError.style.display = '';
+    wrapper.style.border = 'none';
+    inputError.style.display = '';
+    modalAddInput.style.border = 'none';
+    selectError.style.display = '';
+    modalAddSelect.style.border = 'none';
 }
 
 const buttonLogin = document.querySelector('.login__button');
@@ -290,6 +306,7 @@ if (token){                 // si on a un token  =>
             modalGalleryWrapper.style.display = "block";
             modalAddWrapper.style.display = "";
             clearPreview();
+            clearError();
         })
     }
 
@@ -300,6 +317,7 @@ if (token){                 // si on a un token  =>
             modalAddWrapper.style.display = "";
             form.reset();
             clearPreview();
+            clearError();
         })
     }
     
@@ -333,39 +351,41 @@ if (token){                 // si on a un token  =>
         });
     }
 
-    const modalAddButton = document.querySelector('.modal__add-button');
-    const modalAddInput = document.querySelector('.modal__add-input');
-    const modalAddSelect = document.querySelector('.modal__add-select');
-    const wrapper = document.querySelector('.add__preview-wrapper');
     if (modalAddButton){
         modalAddButton.addEventListener('click', function (event) {
             event.preventDefault();
-            
+
             if(modalAddInput.value === '') {
                 modalAddInput.style.border = '1px solid red';
+                inputError.style.display = 'block';
             } else{
                 modalAddInput.style.border = '';
+                inputError.style.display = '';
             }
 
             if (modalAddSelect.value === ""){
                 modalAddSelect.style.border = '1px solid red';
+                selectError.style.display = 'block';
             } else {
                 modalAddSelect.style.border = '';
+                selectError.style.display = '';
             }
 
             
             if (addPreviewInput.files.length === 0){
                 wrapper.style.border = '1px solid red';
+                previewError.style.display = 'block';
             } else {
                 wrapper.style.border = '';
+                previewError.style.display = '';
             }
 
             if(modalAddSelect.value !== "" && modalAddInput.value !== '' && addPreviewInput.files.length > 0){  // si l'input a une image, un titre, et categorie selectionné =>
                 uploadProject();
                 form.reset();
-                reader = null;
                 showModalProject();
                 showProjects(allWorks);
+                clearError();
             }
         })
     }
