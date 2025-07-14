@@ -12,6 +12,11 @@ const modalAddButton = document.querySelector('.modal__add-button');
 const modalAddInput = document.querySelector('.modal__add-input');
 const modalAddSelect = document.querySelector('.modal__add-select');
 const wrapper = document.querySelector('.add__preview-wrapper');
+const buttonLogin = document.querySelector('.login__button');
+const inputEmail = document.querySelector('.login__input-email');
+const inputPassword = document.querySelector('.login__input-password');
+const emailError = document.querySelector('.login__error-email');
+const passwordError = document.querySelector('.login__error-password');
     
 async function chargingProject(){           //  fonction pour afficher les projets
     try {                   
@@ -216,12 +221,6 @@ function clearError(){
     modalAddSelect.style.border = 'none';
 }
 
-const buttonLogin = document.querySelector('.login__button');
-const inputEmail = document.querySelector('.login__input-email');
-const inputPassword = document.querySelector('.login__input-password');
-const emailError = document.querySelector('.login__error-email');
-const passwordError = document.querySelector('.login__error-password');
-
 if (projectContainer) {
     (async () => {          
     await chargingProject();        //  on attend que la fonction ai fini de s'executer
@@ -250,14 +249,13 @@ if (buttonLogin) {
             inputPassword.style.border = "";
             passwordError.classList.remove('login__error');
             passwordError.innerText = '';
-
             login();                                            //   appel de la fonction login
         }
     });
 }
 
 if (token){                 // si on a un token  =>
-    logout = document.querySelector('.header__login-index')
+    const logout = document.querySelector('.header__login-index')
     logout.innerText = "logout";
 
     logout.addEventListener('click', function(event) {          //    event pour se deco si on a un token

@@ -159,7 +159,7 @@ li:hover {
 	margin-bottom: 0.5em;
 }
 
-.visually__hidden {		/* supprime le titre visuellement mais le laisse accessible pour les readers, moteur de recherches, etc... */
+.visually__hidden {		/* supprime le titre visuellement mais le laisse accessible pour les readers, moteur de recherches, etc... , solution de W3C */
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
