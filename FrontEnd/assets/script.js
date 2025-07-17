@@ -159,8 +159,6 @@ function showModalProject(){            // fonction pour afficher toutes les ima
 
 async function uploadProject(){       //  fonction pour ajouter un projet
     const addPreviewInput = document.querySelector('.add__preview-input');
-    const modalAddInput = document.querySelector('.modal__add-input');
-    const modalAddSelect = document.querySelector('.modal__add-select');
     const newData = new FormData();         // creation d'un nouveau formulaire
     newData.append('image', addPreviewInput.files[0]); //ajout des données au formulaire
     newData.append('title', modalAddInput.value);
@@ -321,8 +319,6 @@ if (token){                 // si on a un token  =>
     
     const addPreviewButton = document.querySelector('.add__preview-button');
     const addPreviewInput = document.querySelector('.add__preview-input');
-    const previewWrapper = document.querySelector('.add__preview');
-    const previewImageWrapper = document.querySelector('.add__preview-image-wrapper');
 
     if (addPreviewButton && addPreviewInput) {
 
