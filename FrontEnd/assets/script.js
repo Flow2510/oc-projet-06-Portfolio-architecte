@@ -275,6 +275,17 @@ if (token){                 // si on a un token  =>
         showModalProject();
     })
 
+    modal.addEventListener('click', (f) => {      // fermeture du modal au click en dehors du modal
+        if (f.target === modal){
+            modal.style.display= "none";
+            modalGalleryWrapper.style.display = "block";
+            modalAddWrapper.style.display = "";
+            clearError();
+            form.reset();
+            clearPreview();
+        }
+    })
+
     const modalGalleryClose = document.querySelector('.modal__gallery-close');
     if (modalGalleryClose){
         modalGalleryClose.addEventListener('click', () => {

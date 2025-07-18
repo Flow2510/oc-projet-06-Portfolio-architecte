@@ -76,52 +76,54 @@
 		</ul>
 	</nav>
 </footer>
-<dialog class="modal">
-	<div class="modal__gallery-wrapper">
-		<div class="modal__gallery-navigation">
-			<i class="fa-solid fa-xmark modal__gallery-close"></i>
-		</div>
-		<h3 class="modal__gallery-title">Galerie photo</h3>
-		<div class="modal__gallery">
-			<!-- affichage via JS -->
-		</div>
-		<div class="modal__gallery-banner"></div>
-		<button class="modal__gallery-button">Ajouter une photo</button>
-	</div>
-	<div class="modal__add-wrapper">
-		<div class="modal__add-navigation">
-			<i class="fa-solid fa-arrow-left modal__add-return"></i>
-			<i class="fa-solid fa-xmark modal__add-close"></i>
-		</div>
-		<h3 class="modal__add-title">Ajout photo</h3>
-		<form action="#" class="modal__add-form">
-			<div class="add__preview-wrapper">
-				<div class="add__preview">
-					<i class="fa-regular fa-image add__preview-icon"></i>
-					<button class="add__preview-button">+ Ajouter photo</button>
-					<label class="add__preview-label" for="add__preview-input">
-						<input type="file" name="add__preview-input" id="add__preview-input" class="add__preview-input">
-					</label>				
-					<span class="add__preview-span">jpg, png : 4mo max</span>
+	<div class="modal__overlay">
+		<dialog class="modal">
+			<div class="modal__gallery-wrapper">
+				<div class="modal__gallery-navigation">
+					<i class="fa-solid fa-xmark modal__gallery-close"></i>
 				</div>
-				<div class="add__preview-image-wrapper">
-
+				<h3 class="modal__gallery-title">Galerie photo</h3>
+				<div class="modal__gallery">
+					<!-- affichage via JS -->
 				</div>
+				<div class="modal__gallery-banner"></div>
+				<button class="modal__gallery-button">Ajouter une photo</button>
 			</div>
-			<p class="add__preview-error">Veuillez insérer une image !</p>
-			<label class="modal__add-label" for="modal__add-input">Titre</label>
-			<input class="modal__add-input" type="text" id="modal__add-input">
-			<p class="add__input-error">Veuillez insérer un titre !</p>
-			<label class="modal__add-label" for="modal__add-select">Catégorie</label>
-			<select name="modal__add-select" id="modal__add-select" class="modal__add-select">
-				<option class="modal__add-option" value="" selected disabled>Choisissez une catégorie</option>
-			</select>
-			<p class="add__select-error">Veuillez sélectionner une catégorie !</p>
-			<div class="modal__add-banner"></div>
-			<button class="modal__add-button">Valider</button>
-		</form>
+			<div class="modal__add-wrapper">
+				<div class="modal__add-navigation">
+					<i class="fa-solid fa-arrow-left modal__add-return"></i>
+					<i class="fa-solid fa-xmark modal__add-close"></i>
+				</div>
+				<h3 class="modal__add-title">Ajout photo</h3>
+				<form action="#" class="modal__add-form">
+					<div class="add__preview-wrapper">
+						<div class="add__preview">
+							<i class="fa-regular fa-image add__preview-icon"></i>
+							<button class="add__preview-button">+ Ajouter photo</button>
+							<label class="add__preview-label" for="add__preview-input">
+								<input type="file" name="add__preview-input" id="add__preview-input" class="add__preview-input">
+							</label>				
+							<span class="add__preview-span">jpg, png : 4mo max</span>
+						</div>
+						<div class="add__preview-image-wrapper">
+
+						</div>
+					</div>
+					<p class="add__preview-error">Veuillez insérer une image !</p>
+					<label class="modal__add-label" for="modal__add-input">Titre</label>
+					<input class="modal__add-input" type="text" id="modal__add-input">
+					<p class="add__input-error">Veuillez insérer un titre !</p>
+					<label class="modal__add-label" for="modal__add-select">Catégorie</label>
+					<select name="modal__add-select" id="modal__add-select" class="modal__add-select">
+						<option class="modal__add-option" value="" selected disabled>Choisissez une catégorie</option>
+					</select>
+					<p class="add__select-error">Veuillez sélectionner une catégorie !</p>
+					<div class="modal__add-banner"></div>
+					<button class="modal__add-button">Valider</button>
+				</form>
+			</div>
+		</dialog>
 	</div>
-</dialog>
 <script src="assets/script.js"></script>
 </body>
 </html>
